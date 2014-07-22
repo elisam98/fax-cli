@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id="mainBrand" class="navbar-brand" href="#">SafeCellular Fax Console</a>
+		</div>
+		<div class="collapse navbar-collapse" id="mainNav-collapse">
+			<ul class="nav navbar-nav" id="mainNav">
+				{{#link-to 'index' tagName='li'}}<a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>{{/link-to}}
+				{{#link-to 'compose' tagName='li'}}<a href="#"><span class="glyphicon glyphicon-file"></span> New</a>{{/link-to}}
+				{{#link-to 'history' tagName='li'}}<a href="#"><span class="glyphicon glyphicon-time"></span> History</a>{{/link-to}}
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+				{{#if session.isAuthenticated}}
+					<a class="dropdown-toggle" data-toggle="dropdown" {{ action 'invalidateSession' }}><span class="glyphicon glyphicon-user"></span><b class="caret"></b> Logout</a>
+				{{else}}
+					<a class="dropdown-toggle" data-toggle="dropdown" {{ action 'authenticateSession' }}><span class="glyphicon glyphicon-user"></span><b class="caret"></b> Login</a>
+				{{/if}}
+					<ul class="dropdown-menu">
+						<li class="disabled"><a href="php/logout.php"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
+						<li role="presentation" class="divider"></li>
+						<li><a href="php/logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+	<span style="display:block; height:70px;"></span>
+	<div class="container">
+{{outlet}}
+	</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FaxConsole</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/fax-console.css">
+  </head>
+  <body>
+    <script>
+      window.FaxConsoleENV = {{ENV}};
+      window.ENV = window.FaxConsoleENV;
+      window.EmberENV = window.FaxConsoleENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/fax-console.js"></script>
+    <script>
+      window.FaxConsole = require('fax-console/app')['default'].create(FaxConsoleENV.APP);
+    </script>
+  </body>
+</html>

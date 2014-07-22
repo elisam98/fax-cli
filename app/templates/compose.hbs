@@ -1,0 +1,23 @@
+<div class="well">
+	<p><h1>New Fax</h1></p>
+	<form enctype="multipart/form-data" id="faxForm" method="POST" action="fax_post.php" role="form">
+		<div class="form-group">
+			<label for="telInput"><span class="glyphicon glyphicon-phone-alt"></span> Destination Number</label>
+			<div class="row">
+				<div class="col-sm-5">
+					<input id="telInput" name="phone" type="tel" class="form-control" pattern="[0-9]{10}|[0-9]{11}" data-country="US">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+<!--		<input type="hidden" name="MAX_FILE_SIZE" value="30000000" /> -->
+			<label for="fileInput"><span class="glyphicon glyphicon-file"></span> PDF Document</label>
+			<input type="file" id="fileInput" name="file[]" accept=".pdf" multiple>
+			<div id="previewSpan" class="row">
+			</div>
+		</div>
+		<div class="form-group">
+			<button id="faxSend" type="submit" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-share"></span> Send</button>
+		</div>
+	</form>
+</div>
